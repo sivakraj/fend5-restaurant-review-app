@@ -301,7 +301,7 @@ nav h1 a {
 
 @media screen and (min-width: 1050px) {
   #restaurants-list li {
-    lex: 0 0 30%;
+    flex: 0 0 30%;
     max-width: 30%;
   }
 }
