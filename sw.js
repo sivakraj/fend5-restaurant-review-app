@@ -4,11 +4,12 @@ Attempts to cache user visited pages and serve offline
  */
 
 //An empty array of files to be cached. Since we cache visited pages here, this is left empty.
-// May not be needed but included for completion purpose to be used in conjunction with install event
+// May not be needed but included for completion purpose and to be used in conjunction with install event
 const filesToCache = [
 
 ];
 
+//Name of the cache
 const staticCacheName = 'rr-pages-cache-v1';
 
 
@@ -25,7 +26,7 @@ self.addEventListener('install', event => {
 
 /**
  * Fetch event handler and it's function. This function first checks if the requested page is available in cache and serves from cache
- * if it's available. Otherwise attempts a network request to load the same. Once successfully loaded, it gets cloned to cache.
+ * if it's available. Otherwise attempts a network request to load the same. Once successfully loaded from network, it gets cloned to cache.
  * Supports custom error handling
  */
 self.addEventListener('fetch', function(event) {
